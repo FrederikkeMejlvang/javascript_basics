@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playliste</title>
+  </head>
+  <body>
+    <h1>Playliste</h1>
+    <ul id="playliste"></ul>
+
+    <script>
+      const liste = document.querySelector("ul");
+
+      const playliste = [
+        "Die with a smile",
+        "Birds of a feather",
+        "Please Please Please",
+        "Taste",
+        "Espresso",
+        "Who",
+        "Good Luck, Babe!",
+        "Big Dawgs",
+        "Beautiful Things",
+        "Good Graces",
+      ];
+
+      playliste.forEach(putListe);
+
+      function putListe(sang, i) {
+        console.log(sang, i);
+        liste.innerHTML += "<li>" + sang + "</li>";
+      }
+    </script>
+  </body>
+</html>

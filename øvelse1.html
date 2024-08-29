@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Øvelse 1</title>
+  </head>
+  <body>
+    <h1>Alkoholtest</h1>
+    <img id="snaps" src="billeder/snaps.webp" alt="snaps" />
+    <img id="fanta" src="billeder/fanta.webp" alt="fanta" />
+    <img id="cola" src="billeder/cola.webp" alt="cola" />
+    <img id="øl" src="billeder/øl.webp" alt="øl" />
+    <h2>Se svaret i konsollen</h2>
+
+    <style>
+      img {
+        height: 200px;
+        border-style: solid;
+        border-color: black;
+      }
+    </style>
+
+    <script>
+      document.querySelector("#snaps").addEventListener("click", tjekAlkohol);
+      document.querySelector("#fanta").addEventListener("click", tjekAlkohol);
+      document.querySelector("#cola").addEventListener("click", tjekAlkohol);
+      document.querySelector("#øl").addEventListener("click", tjekAlkohol);
+
+      function tjekAlkohol() {
+        if (this.alt == "snaps" || this.alt == "øl") {
+          console.log("Indeholder Alkohol");
+        } else {
+          console.log("Alkoholfri");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objekt</title>
+
+    <style>
+      img {
+        max-width: 300px;
+      }
+
+      article {
+        border: 1px solid;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tøj</h1>
+
+    <template>
+      <article>
+        <img src="" alt="tshirt" />
+        <h2>type</h2>
+        <p>farve</p>
+        <div>stof</div>
+      </article>
+    </template>
+
+    <section id="tøjliste"></section>
+
+    <script>
+      const bil = {
+        brand: "BMV",
+        model: "M3",
+        drivmiddel: "Diesel",
+        passagere: ["Peter", "Allan", "Mor"],
+      };
+
+      const tøj = [
+        {
+          type: "tshirt",
+          farve: "lyserød",
+          stof: ["bomuld", "polyester"],
+          billede: "tøj.webp",
+        },
+        {
+          type: "nederdel",
+          farve: "hvid",
+          stof: ["bomuld", "polyester"],
+          billede: "tøj.webp",
+        },
+        {
+          type: "hoodie",
+          farve: "grøn",
+          stof: ["bomuld", "polyester"],
+          billede: "tøj.webp",
+        },
+      ];
+
+      const skabelon = document.querySelector("template").content;
+      const tøjliste = document.querySelector("#tøjliste");
+
+      tøj.forEach(visTøj);
+
+      function visTøj(tøj) {
+        console.log(tøj);
+        const kopi = skabelon.cloneNode(true);
+        kopi.querySelector("img").src = "billeder/" + tøj.billede;
+        kopi.querySelector("h2").textContent = tøj.type;
+        kopi.querySelector("p").textContent = tøj.farve;
+        kopi.querySelector("div").textContent = tøj.stof;
+        const beholder = document.querySelector("body");
+        beholder.appendChild(kopi);
+      }
+    </script>
+  </body>
+</html>
